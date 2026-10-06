@@ -62,7 +62,7 @@ For example, multiple subnets can be created from a map:
 
 ```hcl
 variable "subnets" {
-  type = map(string)
+  type = any
 }
 ```
 
