@@ -1,0 +1,26 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Sensitive Terraform files
+*.tfvars
+!terraform.tfvars.example
+
+# Terraform lock file
+# Keep this file if you want reproducible provider versions
+# .terraform.lock.hcl
+
+# Azure credentials
+*.pem
+*.key
+*.pfx
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
