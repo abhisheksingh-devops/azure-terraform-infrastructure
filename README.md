@@ -1,4 +1,25 @@
-# Azure Infrastructure Automation using Terraform
+<div align="center">
+
+# 🚀 Azure Infrastructure Automation using Terraform
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=23&duration=3000&pause=1000&color=0078D4&center=true&vCenter=true&width=750&lines=Azure+Infrastructure+Automation;Infrastructure+as+Code+%28IaC%29;Terraform+Modules+%7C+for_each;Automating+Cloud+Infrastructure" />
+
+### ☁️ Microsoft Azure | Terraform | IaC | Cloud Automation
+
+<br/>
+
+<img src="https://img.shields.io/badge/Azure-Cloud-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white"/>
+<img src="https://img.shields.io/badge/Terraform-IaC-7B42BC?style=for-the-badge&logo=terraform&logoColor=white"/>
+<img src="https://img.shields.io/badge/Git-Version_Control-F05032?style=for-the-badge&logo=git&logoColor=white"/>
+<img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white"/>
+
+<br/><br/>
+
+<img src="https://skillicons.dev/icons?i=azure,terraform,git,github,linux,vscode&theme=dark" />
+
+</div>
+
+---
 
 ## 📌 Project Overview
 
@@ -6,28 +27,71 @@ This project demonstrates automated provisioning of **Microsoft Azure infrastruc
 
 The infrastructure is managed using **Infrastructure as Code (IaC)** principles, making deployments repeatable, consistent, and easy to maintain.
 
-The project uses **reusable Terraform modules** and **`for_each`** to dynamically create multiple Azure resources.
+The project uses **reusable Terraform modules** and **`for_each`** to dynamically create multiple Azure resources without repeating resource blocks.
+
+### 🎯 Project Objectives
+
+* Automate Azure infrastructure provisioning.
+* Implement Infrastructure as Code.
+* Build reusable Terraform modules.
+* Create multiple Azure resources dynamically.
+* Manage infrastructure using Terraform variables.
+* Maintain infrastructure code using Git and GitHub.
+
+---
 
 ## 🛠️ Technologies Used
 
-* Microsoft Azure
-* Terraform
-* Azure Resource Manager
-* Azure Networking
-* Git
-* GitHub
-* Infrastructure as Code (IaC)
+<div align="center">
+
+| Technology                | Purpose                     |
+| :------------------------ | :-------------------------- |
+| ☁️ Microsoft Azure        | Cloud Infrastructure        |
+| 🟣 Terraform              | Infrastructure as Code      |
+| 🔷 Azure Resource Manager | Azure Resource Management   |
+| 🌐 Azure Networking       | Virtual Network and Subnets |
+| 🔀 Git                    | Version Control             |
+| 🐙 GitHub                 | Source Code Management      |
+| ⚙️ IaC                    | Infrastructure Automation   |
+
+</div>
+
+---
 
 ## 🏗️ Azure Resources
 
-This project provisions Azure infrastructure including:
+This project provisions the following Azure infrastructure:
 
-* Resource Group
-* Virtual Network (VNet)
-* Multiple Subnets
-* Network Security Groups (NSG)
+| Azure Resource                | Description                   |
+| :---------------------------- | :---------------------------- |
+| Resource Group                | Organizes Azure resources     |
+| Virtual Network (VNet)        | Provides private networking   |
+| Multiple Subnets              | Divides network into segments |
+| Network Security Groups (NSG) | Controls network traffic      |
 
-Terraform **`for_each`** is used to create multiple resources dynamically without repeating Terraform resource blocks.
+### 🏛️ Infrastructure Architecture
+
+```mermaid
+flowchart TD
+    A["👨‍💻 Developer"] --> B["GitHub Repository"]
+    B --> C["Terraform Configuration"]
+    C --> D["Resource Group"]
+    D --> E["Virtual Network"]
+    E --> F["Subnet 1"]
+    E --> G["Subnet 2"]
+    E --> H["Subnet 3"]
+    F --> I["Network Security Group"]
+    G --> J["Network Security Group"]
+    H --> K["Network Security Group"]
+
+    style A fill:#24292e,color:#fff
+    style B fill:#24292e,color:#fff
+    style C fill:#7B42BC,color:#fff
+    style D fill:#0078D4,color:#fff
+    style E fill:#0078D4,color:#fff
+```
+
+---
 
 ## 📂 Project Structure
 
@@ -54,21 +118,19 @@ azure-terraform-infrastructure/
         └── terraform.tfvars
 ```
 
+---
+
 ## 🔁 Terraform `for_each`
 
-This project uses Terraform **`for_each`** for dynamic resource creation.
+This project uses Terraform's **`for_each` meta-argument** to create multiple resources dynamically.
 
-For example, multiple subnets can be created from a map:
+### Example: Subnet Creation
 
 ```hcl
 variable "subnets" {
   type = any
 }
-```
 
-The `for_each` meta-argument can then be used to create each subnet dynamically:
-
-```hcl
 resource "azurerm_subnet" "subnet" {
   for_each = var.subnets
 
@@ -79,54 +141,72 @@ resource "azurerm_subnet" "subnet" {
 }
 ```
 
-### Benefits of `for_each`
+### ✨ Benefits of `for_each`
 
-* Reduces code duplication
-* Creates multiple resources dynamically
-* Makes Terraform configuration reusable
-* Makes infrastructure easier to maintain
-* Allows resources to be managed using maps
+* ♻️ Reduces code duplication.
+* ⚡ Creates multiple resources dynamically.
+* 🔧 Makes Terraform configuration reusable.
+* 📦 Makes infrastructure easier to maintain.
+* 🗂️ Allows resources to be managed using maps.
+
+---
 
 ## 🧩 Terraform Modules
 
-The project uses reusable Terraform modules:
+This project uses reusable Terraform modules to organize infrastructure.
 
-### Resource Group Module
+### 1. Resource Group Module
 
-Located at:
+📁 `modules/resource_group/`
 
-```text
-modules/resource_group/
-```
+Responsible for creating and managing Azure Resource Groups.
 
-This module is responsible for creating the Azure Resource Group.
+### 2. VNet Module
 
-### VNet Module
+📁 `modules/vnet/`
 
-Located at:
+Responsible for creating Azure Virtual Networks and related networking resources.
 
-```text
-modules/vnet/
-```
-
-This module is responsible for creating the Azure Virtual Network and related networking resources.
+---
 
 ## 🌍 Development Environment
 
-The development environment is located at:
+📁 `environments/dev/`
 
-```text
-environments/dev/
-```
+The development environment contains:
 
-It contains:
+| File               | Description                  |
+| :----------------- | :--------------------------- |
+| `main.tf`          | Module configuration         |
+| `provider.tf`      | Azure provider configuration |
+| `variables.tf`     | Input variable definitions   |
+| `terraform.tfvars` | Environment-specific values  |
 
-* `main.tf` — module configuration
-* `provider.tf` — Azure provider configuration
-* `variables.tf` — input variable definitions
-* `terraform.tfvars` — environment-specific values
+---
 
 ## ⚙️ Terraform Workflow
+
+<div align="center">
+
+```mermaid
+flowchart TD
+    A["🚀 Start"] --> B["terraform init"]
+    B --> C["terraform validate"]
+    C --> D["terraform plan"]
+    D --> E["terraform apply"]
+    E --> F["☁️ Azure Infrastructure"]
+    F --> G["terraform destroy"]
+
+    style A fill:#24292e,color:#fff
+    style B fill:#7B42BC,color:#fff
+    style C fill:#7B42BC,color:#fff
+    style D fill:#0078D4,color:#fff
+    style E fill:#0078D4,color:#fff
+    style F fill:#00875A,color:#fff
+    style G fill:#C0392B,color:#fff
+```
+
+</div>
 
 ### 1. Initialize Terraform
 
@@ -158,39 +238,48 @@ terraform apply
 terraform destroy
 ```
 
-## 🔐 Security
+---
 
-Sensitive information should not be committed to GitHub.
+## 🔐 Security Best Practices
 
-The `.gitignore` file is used to exclude files such as:
+* Never commit passwords or credentials to GitHub.
+* Exclude Terraform state files from version control.
+* Exclude the `.terraform/` directory.
+* Use secure Azure authentication methods.
+* Manage sensitive information securely.
+* Follow the principle of least privilege.
 
-* Terraform state files
-* `.terraform/` directory
-* Environment-specific sensitive files
-* Secret files
-* Local Terraform files
+---
 
-Azure credentials and secrets should be managed securely using appropriate authentication methods instead of storing them directly in the repository.
-
-## 🎯 Key Learning
+## 🎯 Key Learning Outcomes
 
 Through this project, I practiced:
 
-* Azure infrastructure provisioning
-* Terraform configuration
-* Terraform variables
-* Reusable Terraform modules
-* Terraform `for_each`
-* Dynamic resource creation
-* Azure networking
-* Infrastructure as Code (IaC)
-* Git version control
-* GitHub repository management
+* ☁️ Azure Infrastructure Provisioning
+* 🏗️ Terraform Configuration
+* 📦 Terraform Variables
+* 🧩 Reusable Terraform Modules
+* 🔁 Terraform `for_each`
+* ⚡ Dynamic Resource Creation
+* 🌐 Azure Networking
+* 🔐 Infrastructure as Code (IaC)
+* 🔀 Git Version Control
+* 🐙 GitHub Repository Management
 
-
+---
 
 ## 👨‍💻 Author
 
-**Abhishek Singh**
+<div align="center">
 
-DevOps Engineer | Azure | Terraform | CI/CD | Git | Linux
+# Abhishek Singh
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&pause=1000&color=0078D4&center=true&vCenter=true&width=600&lines=DevOps+Engineer;Azure+%7C+Terraform+%7C+CI%2FCD;Cloud+Infrastructure+Automation" />
+
+[![GitHub](https://img.shields.io/badge/GitHub-abhisheksingh--devops-181717?style=for-the-badge\&logo=github)](https://github.com/abhisheksingh-devops)
+
+### Building 🚀 Automating ⚙️ Learning 📚
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0078D4,100:7B42BC&height=120&section=footer" width="100%"/>
+
+</div>
