@@ -266,6 +266,10 @@ Through this project, I practiced:
 * 🔀 Git Version Control
 * 🐙 GitHub Repository Management
 
+🚀 Project Status
+<p align="center">
+  <img src="https://img.shields.io/badge/Project%20Status-In%20Progress-orange?style=for-the-badge&logo=github&logoColor=white&labelColor=181717"/>
+</p>
 ---
 
 ## 👨‍💻 Author
